@@ -33,7 +33,7 @@ def browser(request):
 ### hooks for adding info in HTML report
 def pytest_config(config):
     config._metadat["Project Name"] ="Python Selenim Hybrid framework"
-    config._metadat["Module Name"] = "Customer Registration"
+    config._metadat["Module Name"] = "Ebay"
     config._metadat["Author"] ="Parag Khedikar"
 
 ### hooks for delete/modify the info in html report

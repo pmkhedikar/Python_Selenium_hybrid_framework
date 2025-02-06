@@ -12,12 +12,7 @@ class ReadConfig():
         return url
 
     @staticmethod
-    def getUserEmail():
-        userEmail = config.get("commonInfo", "email")
-        return userEmail
-
-    @staticmethod
-    def getPassword():
-        password = config.get("commonInfo", "password")
-        return password
+    def getApiUrl():
+        url = config.get("commonInfo", "apiURL")
+        return url
 

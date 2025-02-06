@@ -3,21 +3,21 @@ from selenium.webdriver.common.by import By
 
 class HomePage():
     # locators
-    myaccount_link = "//span[text()[contains(.,'My Account')]]"
-    register_link = "//*[@class='dropdown-item' and contains(text(),'Register')]"
-    login_link = "//*[@class='dropdown-item' and contains(text(),'Login')]"
+    searchBox_xpath = "//*[@title='Search']"
+    searchButton_xpath = "//*[@role='button' and @value='Search']"
+    bookLink_xpath= "/(//ul[contains(@class, 'srp-results')]/li[contains(@class, 's-item')])[1]//a[contains(@class, 's-item__link')]/@href"
 
     # constructor
     def __init__(self, driver):
         self.driver = driver
 
     # action steps
-    def clickMyAccount(self):
-        self.driver.find_element(By.XPATH, self.myaccount_link).click()
+    def searchItem(self,searchKey):
+        self.driver.find_element(By.XPATH, self.searchBox_xpath).send_keys(searchKey)
 
-    def clickRegister(self):
-        self.driver.find_element(By.XPATH, self.register_link).click()
+    def clickSearchbutton(self):
+        self.driver.find_element(By.XPATH, self.searchButton_xpath).click()
 
-    def clickLogin(self):
-        self.driver.find_element(By.XPATH, self.login_link)
+    def clickOnBooklink(self):
+        self.driver.find_element(By.XPATH, self.bookLink_xpath).click()
 
